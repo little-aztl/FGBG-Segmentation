@@ -9,6 +9,8 @@ def load_image(image_path, mode='RGB'):
     '''
     try:
         img = Image.open(image_path)
+        if mode not in ['RGB', 'gray']:
+            raise ValueError("Mode must be either 'RGB' or 'gray'.")
         if mode == 'gray':
             img = img.convert('L')
         img_np = np.array(img) / 255.0

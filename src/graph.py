@@ -4,9 +4,9 @@ from matplotlib import pyplot as plt
 
 class GraphHelper(object):
     SIGMA = 1
-    LAMBDA = 3
+    LAMBDA = 1
     def __init__(self, img_color:np.ndarray, foreground_weight, background_weight):
-        self.img_color = img_color
+        self.img_color = img_color.copy()
         self.foreground_weight = foreground_weight
         self.background_weight = background_weight
 
